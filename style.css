@@ -7,7 +7,7 @@
   text-align: center;
   color: navy;
   font-family: 'Roboto', sans-serif;
-  font-size: 3em;
+  font-size: 5em;
   height: 100;
   margin: 0;
   width: 250px;
@@ -22,7 +22,7 @@
   top: 12vh;
   font-family: 'Lato', sans-serif;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   padding: 5px;
   color: navy;
 }
