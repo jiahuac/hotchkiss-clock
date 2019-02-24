@@ -41,3 +41,9 @@
   font-family: 'Lato', sans-serif;
   color: LightBlue;
 }
+
+body {
+  background-image: url("tile.png");
+  background-repeat: repeat;
+  background-size: 600px 600px;
+}
