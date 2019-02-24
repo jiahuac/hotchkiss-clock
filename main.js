@@ -6,7 +6,7 @@ Last updated 23 Feb 2019
 
 // Gets the current date and time
 var d = new Date();
-// var d = new Date(2019,1,4,12,55,01,0);
+// var d = new Date(2019,1,4,7,28,01,0);
 // console.log(" *** d.getDate() " + d.getDate());
 // console.log(" *** d.getMonth() " + d.getMonth());
 // console.log(" *** dayType noClassSats" + i);
@@ -121,10 +121,23 @@ function update()
 		{
 			// console.log(" *** for i " + i);
 			// console.log(" *** parseRaw " + parseRaw());
+
+			if (parseRaw() < currentSchedule[0].startRaw)
+			{
+				beforeSchool(currentSchedule[0].title, currentSchedule[0].startRaw - parseRaw());
+			}
+
 			if (currentSchedule[i].startRaw < parseRaw() && parseRaw() < currentSchedule[i].endRaw)
 			{
 				// console.log(" *** currentSchedule[i].startRaw " + currentSchedule[i].startRaw);
-				normalDay(currentSchedule[i].title, currentSchedule[i].endRaw - parseRaw(), currentSchedule[i + 2].title, currentSchedule[i + 2].startRaw - parseRaw())
+				if (currentSchedule[i].title == "Passing Period")
+				{
+					normalDay(currentSchedule[i].title, currentSchedule[i].endRaw - parseRaw(), currentSchedule[i + 1].title, currentSchedule[i + 1].startRaw - parseRaw());
+				}
+				else
+				{
+					normalDay(currentSchedule[i].title, currentSchedule[i].endRaw - parseRaw(), currentSchedule[i + 2].title, currentSchedule[i + 2].startRaw - parseRaw());
+				}
 			}
 			if (parseRaw() > currentSchedule[currentSchedule.length - 1].endRaw) { document.getElementById("currentEvent").innerHTML = "Have a nice day!"; }
 		}
@@ -145,20 +158,20 @@ function getSchedule()
 	if (weekday == 1 || weekday == 4)
 	{
 		currentSchedule[0] = new period("Period 1", 8, 30, 9, 15);
-		currentSchedule[1] = new period("Passing", 9, 15, 9, 20);
+		currentSchedule[1] = new period("Passing Period", 9, 15, 9, 20);
 		currentSchedule[2] = new period("Period 2", 9, 20, 10, 5);
-		currentSchedule[3] = new period("Passing", 10, 5, 10, 10);
+		currentSchedule[3] = new period("Passing Period", 10, 5, 10, 10);
 		currentSchedule[4] = new period("Chapel / Class Meeting", 10, 10, 10, 35);
-		currentSchedule[5] = new period("Passing", 10, 35, 10, 40);
+		currentSchedule[5] = new period("Passing Period", 10, 35, 10, 40);
 		currentSchedule[6] = new period("Period 3", 10, 40, 11, 20);
-		currentSchedule[7] = new period("Passing", 11, 20, 11, 25);
+		currentSchedule[7] = new period("Passing Period", 11, 20, 11, 25);
 		currentSchedule[8] = new period("Period 4", 11, 25, 12, 5);
-		currentSchedule[9] = new period("Passing", 12, 5, 12, 10);
+		currentSchedule[9] = new period("Passing Period", 12, 5, 12, 10);
 		currentSchedule[10] = new period("Period 5A", 12, 10, 12, 55);
 		currentSchedule[11] = new period("Period 5B", 12, 55, 13, 40);
-		currentSchedule[12] = new period("Passing", 13, 40, 13, 45);
+		currentSchedule[12] = new period("Passing Period", 13, 40, 13, 45);
 		currentSchedule[13] = new period("Period 6", 13, 45, 14, 30);
-		currentSchedule[14] = new period("Passing", 14, 30, 14, 35);
+		currentSchedule[14] = new period("Passing Period", 14, 30, 14, 35);
 		currentSchedule[15] = new period("Period 7", 14, 35, 15, 20);
 		currentSchedule[16] = new period("end of school", 15, 20, 15, 20);
 		currentSchedule[17] = new period("end of school", 15, 20, 15, 20);
@@ -166,20 +179,20 @@ function getSchedule()
 	else if (weekday == 2 || weekday == 5)
 	{
 		currentSchedule[0] = new period("Period 1", 8, 30, 9, 10);
-		currentSchedule[1] = new period("Passing", 9, 10, 9, 15);
+		currentSchedule[1] = new period("Passing Period", 9, 10, 9, 15);
 		currentSchedule[2] = new period("Period 2", 9, 15, 9, 55);
-		currentSchedule[3] = new period("Passing", 9, 55, 10, 00);
+		currentSchedule[3] = new period("Passing Period", 9, 55, 10, 00);
 		currentSchedule[4] = new period("Auditorium",  10, 00, 10, 35);
-		currentSchedule[5] = new period("Passing", 10, 35, 10, 40);
+		currentSchedule[5] = new period("Passing Period", 10, 35, 10, 40);
 		currentSchedule[6] = new period("Period 3", 10, 40, 11, 20);
-		currentSchedule[7] = new period("Passing", 11, 20, 11, 25);
+		currentSchedule[7] = new period("Passing Period", 11, 20, 11, 25);
 		currentSchedule[8] = new period("Period 4", 11, 25, 12, 5);
-		currentSchedule[9] = new period("Passing", 12, 5, 12, 10);
+		currentSchedule[9] = new period("Passing Period", 12, 5, 12, 10);
 		currentSchedule[10] = new period("Period 5A", 12, 10, 12, 55);
 		currentSchedule[11] = new period("Period 5B", 12, 55, 13, 40);
-		currentSchedule[12] = new period("Passing", 13, 40, 13, 45);
+		currentSchedule[12] = new period("Passing Period", 13, 40, 13, 45);
 		currentSchedule[13] = new period("Period 6", 13, 45, 14, 30);
-		currentSchedule[14] = new period("Passing", 14, 30, 14, 35);
+		currentSchedule[14] = new period("Passing Period", 14, 30, 14, 35);
 		currentSchedule[15] = new period("Period 7", 14, 35, 15, 20);
 		currentSchedule[16] = new period("end of school", 15, 20, 15, 20);
 		currentSchedule[17] = new period("end of school", 15, 20, 15, 20);
@@ -187,13 +200,13 @@ function getSchedule()
 	else if (weekday == 3)
 	{
 		currentSchedule[0] = new period("Period 1", 8, 50, 9, 35);
-		currentSchedule[1] = new period("Passing", 9, 35, 9, 40);
+		currentSchedule[1] = new period("Passing Period", 9, 35, 9, 40);
 		currentSchedule[2] = new period("Period 2", 9, 40, 10, 25);
-		currentSchedule[3] = new period("Passing", 10, 25, 10, 30);
+		currentSchedule[3] = new period("Passing Period", 10, 25, 10, 30);
 		currentSchedule[4] = new period("Advisory", 10, 30, 10, 45);
-		currentSchedule[5] = new period("Passing", 10, 45, 10, 50);
+		currentSchedule[5] = new period("Passing Period", 10, 45, 10, 50);
 		currentSchedule[6] = new period("Period 3", 10, 50, 11, 30);
-		currentSchedule[7] = new period("Passing", 11, 30, 11, 35);
+		currentSchedule[7] = new period("Passing Period", 11, 30, 11, 35);
 		currentSchedule[8] = new period("Period 4", 11, 35, 12, 15);
 		currentSchedule[9] = new period("end of school", 12, 15, 12, 15);
 		currentSchedule[10] = new period("end of school", 12, 15, 12, 15);
@@ -201,11 +214,11 @@ function getSchedule()
 	else if (weekday == 6)
 	{
 		currentSchedule[0] = new period("Period 1", 8, 30, 9, 15);
-		currentSchedule[1] = new period("Passing", 9, 15, 9, 20);
+		currentSchedule[1] = new period("Passing Period", 9, 15, 9, 20);
 		currentSchedule[2] = new period("Period 2", 9, 20, 10, 5);
 		currentSchedule[3] = new period("Break",  10, 5, 10, 20);
 		currentSchedule[4] = new period("Period 3",  10, 20, 11, 5);
-		currentSchedule[5] = new period("Passing", 11, 5, 11, 10);
+		currentSchedule[5] = new period("Passing Period", 11, 5, 11, 10);
 		currentSchedule[6] = new period("Period 4",  11, 10, 11, 55);
 		currentSchedule[7] = new period("end of school", 11, 55, 11, 55);
 		currentSchedule[8] = new period("end of school", 11, 55, 11, 55);
@@ -241,8 +254,13 @@ function holiday()
 
 function normalDay(nowTitle, nowDiff, nextTitle, nextDiff)
 {
-	document.getElementById("currentEvent").innerHTML = "It is now <u><b>" + nowTitle + "</b></u>, which is ending in <u><b>" + rawToString(nowDiff) + "</b></u>.";
+	document.getElementById("currentEvent").innerHTML = "<u><b>" + nowTitle + "</b></u> ends in <u><b>" + rawToString(nowDiff) + "</b></u>.";
 	document.getElementById("nextEvent").innerHTML = "It will be <u><b>" + nextTitle + "</b></u> in <u><b>" + rawToString(nextDiff) + "</b></u>.";
+}
+
+function beforeSchool(title, time)
+{
+	document.getElementById("nextEvent").innerHTML = "<u><b>" + title + "</b></u> starts in <u><b>" + rawToString(time) + "</b></u>.";
 }
 
 function parseRaw()
@@ -252,7 +270,7 @@ function parseRaw()
 
 function toMins(raw)
 {
-	return Math.ceil(raw / 60);
+	return Math.ceil((raw % 3600) / 60);
 }
 
 function toHrs(raw)
@@ -262,8 +280,22 @@ function toHrs(raw)
 
 function rawToString(raw)
 {
-	if (toMins(raw) == 1) { return toMins(raw) + " minute"; }
-	else { return toMins(raw) + " minutes"; }
+	if (toHrs(raw) == 0)
+	{
+		if (toMins(raw) == 1) { return toMins(raw) + " minute"; }
+		else { return toMins(raw) + " minutes"; }
+	}
+	else if (toHrs(raw) == 1)
+	{
+		if (toMins(raw) == 1) { return toHrs(raw) + " hour " + toMins(raw) + " minute"; }
+		else { return toHrs(raw) + " hour " + toMins(raw) + " minutes"; }
+	}
+	else
+	{
+		if (toMins(raw) == 1) { return toHrs(raw) + " hours " + toMins(raw) + " minute"; }
+		else { return toHrs(raw) + " hours " + toMins(raw) + " minutes"; }
+	}
+
 }
 
 setInterval(loadTime, 1000);
