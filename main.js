@@ -83,7 +83,7 @@ function period(title, startHr, startMin, endHr, endMin)
 	this.startHr = startHr;
 	this.startMin = startMin;
 	this.startRaw = startHr * 3600 + startMin * 60;
-	console.log(" *** startRaw " + this.startRaw);
+	// console.log(" *** startRaw " + this.startRaw);
 	// this.start = new Date(0,0,0,startHr,startMin,0,0);
 	this.endHr = endHr;
 	this.endMin = endMin;
@@ -111,19 +111,19 @@ function update()
 	else if (type == 4) { holiday(); }
 	else if (type == 0)
 	{
-		console.log(" *** Is normal day");
+		// console.log(" *** Is normal day");
 		// Gets today's schedule
 		var currentSchedule = getSchedule();
-		console.log(" *** currentSchedule " + currentSchedule.length);
+		// console.log(" *** currentSchedule " + currentSchedule.length);
 
 		// Checks which period it currently is
 		for (i = 0; i < currentSchedule.length; i++)
 		{
-			console.log(" *** for i " + i);
-			console.log(" *** parseRaw " + parseRaw());
+			// console.log(" *** for i " + i);
+			// console.log(" *** parseRaw " + parseRaw());
 			if (currentSchedule[i].startRaw < parseRaw() && parseRaw() < currentSchedule[i].endRaw)
 			{
-				console.log(" *** currentSchedule[i].startRaw " + currentSchedule[i].startRaw);
+				// console.log(" *** currentSchedule[i].startRaw " + currentSchedule[i].startRaw);
 				normalDay(currentSchedule[i].title, currentSchedule[i].endRaw - parseRaw(), currentSchedule[i + 2].title, currentSchedule[i + 2].startRaw - parseRaw())
 			}
 			if (parseRaw() > currentSchedule[currentSchedule.length - 1].endRaw) { document.getElementById("currentEvent").innerHTML = "Have a nice day!"; }
@@ -135,7 +135,7 @@ function update()
 // Gets the right schedule for a regular class day
 function getSchedule()
 {
-console.log(" *** d.getDate() " + d.getDay());
+// console.log(" *** d.getDate() " + d.getDay());
 	var weekday = d.getDay();
 
 	// Defines the currentSchedule array
