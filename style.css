@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:700');
+
+#clock
+{
+  position: relative;
+  top: 10vh;
+  text-align: center;
+  color: navy;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+  height: 100;
+  margin: 0;
+  width: 250px;
+  border: 10px solid navy;
+  padding: 25px;
+  margin: auto;
+}
+
+#date, #currentEvent, #nextEvent
+{
+  position: relative;
+  top: 12vh;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 5px;
+  color: navy;
+}
+
+#date
+{
+  font-weight: bold;
+  padding: 30px;
+}
+
+#contact
+{
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  font-family: 'Lato', sans-serif;
+  color: LightBlue;
+}
