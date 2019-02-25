@@ -168,13 +168,14 @@ function getSchedule()
 		currentSchedule[8] = new period("Period 4", 11, 25, 12, 5);
 		currentSchedule[9] = new period("Passing Period", 12, 5, 12, 10);
 		currentSchedule[10] = new period("Period 5A", 12, 10, 12, 55);
-		currentSchedule[11] = new period("Period 5B", 12, 55, 13, 40);
-		currentSchedule[12] = new period("Passing Period", 13, 40, 13, 45);
-		currentSchedule[13] = new period("Period 6", 13, 45, 14, 30);
-		currentSchedule[14] = new period("Passing Period", 14, 30, 14, 35);
-		currentSchedule[15] = new period("Period 7", 14, 35, 15, 20);
-		currentSchedule[16] = new period("end of school", 15, 20, 15, 20);
+		currentSchedule[11] = new period("Lunch Bell", 12, 55, 12, 55);
+		currentSchedule[12] = new period("Period 5B", 12, 55, 13, 40);
+		currentSchedule[13] = new period("Passing Period", 13, 40, 13, 45);
+		currentSchedule[14] = new period("Period 6", 13, 45, 14, 30);
+		currentSchedule[15] = new period("Passing Period", 14, 30, 14, 35);
+		currentSchedule[16] = new period("Period 7", 14, 35, 15, 20);
 		currentSchedule[17] = new period("end of school", 15, 20, 15, 20);
+		currentSchedule[18] = new period("end of school", 15, 20, 15, 20);
 	}
 	else if (weekday == 2 || weekday == 5)
 	{
@@ -189,13 +190,14 @@ function getSchedule()
 		currentSchedule[8] = new period("Period 4", 11, 25, 12, 5);
 		currentSchedule[9] = new period("Passing Period", 12, 5, 12, 10);
 		currentSchedule[10] = new period("Period 5A", 12, 10, 12, 55);
-		currentSchedule[11] = new period("Period 5B", 12, 55, 13, 40);
-		currentSchedule[12] = new period("Passing Period", 13, 40, 13, 45);
-		currentSchedule[13] = new period("Period 6", 13, 45, 14, 30);
-		currentSchedule[14] = new period("Passing Period", 14, 30, 14, 35);
-		currentSchedule[15] = new period("Period 7", 14, 35, 15, 20);
-		currentSchedule[16] = new period("end of school", 15, 20, 15, 20);
+		currentSchedule[11] = new period("Lunch Bell", 12, 55, 12, 55);
+		currentSchedule[12] = new period("Period 5B", 12, 55, 13, 40);
+		currentSchedule[13] = new period("Passing Period", 13, 40, 13, 45);
+		currentSchedule[14] = new period("Period 6", 13, 45, 14, 30);
+		currentSchedule[15] = new period("Passing Period", 14, 30, 14, 35);
+		currentSchedule[16] = new period("Period 7", 14, 35, 15, 20);
 		currentSchedule[17] = new period("end of school", 15, 20, 15, 20);
+		currentSchedule[18] = new period("end of school", 15, 20, 15, 20);
 	}
 	else if (weekday == 3)
 	{
