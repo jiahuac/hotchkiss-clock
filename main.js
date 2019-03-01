@@ -20,10 +20,10 @@ function updateD()
 function dayType()
 {
 	// Defines the special days
-	var specialDays = [new calDay(1,1), new calDay(2,22)];
-	var noClassSats = [new calDay(2,1)];
-	var noClasses = [new calDay(3,1)];
-	var holiday = [new calDay(2,19)];
+	var specialDays = [];
+	var noClassSats = [];
+	var noClasses = [];
+	var holiday = [];
 
 	for (i = 0; i < specialDays.length; i++)
 	{
