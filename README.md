@@ -1,1 +1,1 @@
-# hotchkiss-clock
+# The Hotchkiss Clock
