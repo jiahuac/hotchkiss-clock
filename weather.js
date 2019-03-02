@@ -8,8 +8,6 @@ let apiKey = '715edb98d0b4bfdc98caa888994cf61e';
 let city = 4930396;
 let url = `https://api.openweathermap.org/data/2.5/weather?id=${city}&units=imperial&appid=${apiKey}`
 
-request.open('GET', url);
-
 $.ajax({
     url: url,
     type: 'GET',
