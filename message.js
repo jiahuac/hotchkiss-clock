@@ -6,9 +6,8 @@ Last updated 24 Feb 2019
 */
 
 // Loads a series of messages and quotes
-var message = [];
-
-var quotes=[
+var message = []; // <- Message goes here!
+var quotes = [
 		{
 			quote: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
 			name:"Francis of Assisi"
@@ -105,8 +104,7 @@ var quotes=[
 	    	quote:"Hapiness is not something ready made. It comes from your own actions.",
 	    	name:"Dalai Lama"
 	    }
-
-	];
+	];  // <- Quotes go here
 
 function loadMessage()
 {
