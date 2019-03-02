@@ -20,10 +20,11 @@ function updateD()
 function dayType()
 {
 	// Defines the special days
-	var specialDays = [];
-	var noClassSats = [];
-	var noClasses = [];
-	var holiday = [];
+	var onbreak;
+	var specialDays = [new calDay(4,25)]; // <- For special event days
+	var noClassSats = [new calDay(4,20), new calDay(5,4), new calDay(5,18)]; // <- For days without Saturday classes
+	var noClasses = [new calDay(4,22), new calDay(5,18), new calDay(6,1)]; // <- For days without classes, or breaks
+	var holiday = []; // <- For holidays
 
 	for (i = 0; i < specialDays.length; i++)
 	{
@@ -51,7 +52,8 @@ function dayType()
 		// console.log(" *** dayType holiday " + i);
 	}
 
-	return 0;
+	if (onbreak) { return 5; }
+	else { return 0; }
 }
 
 function loadTime()
@@ -94,7 +96,9 @@ function period(title, startHr, startMin, endHr, endMin)
 function calDay(month, date)
 {
 	this.date = date;
+	// console.log(this.date);
 	this.month = month - 1;
+	// console.log(this.month);
 }
 
 // Updates the clock messages
@@ -103,12 +107,13 @@ function update()
 	// Stores the dayType
 	var type = dayType();
 	// Debug ***
-	// document.getElementById("debug").innerHTML = type;
+	// console.log(type);
 	// Checks for special days
 	if (type == 1) { specialSchedule(); }
 	else if (type == 2) { noClassSat(); }
 	else if (type == 3) { noClasses(); }
 	else if (type == 4) { holiday(); }
+	else if (type == 5) { schoolBreak(); }
 	else if (type == 0)
 	{
 		// console.log(" *** Is normal day");
@@ -226,35 +231,40 @@ function getSchedule()
 		currentSchedule[8] = new period("end of school", 11, 55, 11, 55);
 	}
 	else { noClasses(); }
-
 	return currentSchedule;
 }
 
-function specialSchedule()
+function specialSchedule() // <- What to print during special schedules
 {
 		document.getElementById("currentEvent").innerHTML = "There is a special schedule today.";
 		document.getElementById("nextEvent").innerHTML = "Please consult your planner for details.";
 }
 
-function noClassSat()
+function noClassSat() // <- What to print for no-class Saturdays
 {
 	document.getElementById("currentEvent").innerHTML = "There are no classes today.";
 	document.getElementById("nextEvent").innerHTML = " Enjoy your actual weekend!";
 }
 
-function noClasses()
+function noClasses() // <- What to print when no classes
 {
 	document.getElementById("currentEvent").innerHTML = "There are no classes today.";
 	document.getElementById("nextEvent").innerHTML = " Enjoy the day off!";
 }
 
-function holiday()
+function holiday() // <- What to print during holidays
 {
 	document.getElementById("currentEvent").innerHTML = "Enjoy your holiday!";
 	document.getElementById("nextEvent").innerHTML = "";
 }
 
-function normalDay(nowTitle, nowDiff, nextTitle, nextDiff)
+function schoolBreak() // <- What to print during school breaks
+{
+	document.getElementById("currentEvent").innerHTML = "Enjoy your break!";
+	document.getElementById("nextEvent").innerHTML = "";
+}
+
+function normalDay(nowTitle, nowDiff, nextTitle, nextDiff)  // <- What to print during normal days
 {
 	document.getElementById("currentEvent").innerHTML = "<u><b>" + nowTitle + "</b></u> ends in <u><b>" + rawToString(nowDiff) + "</b></u>.";
 	document.getElementById("nextEvent").innerHTML = "It will be <u><b>" + nextTitle + "</b></u> in <u><b>" + rawToString(nextDiff) + "</b></u>.";
