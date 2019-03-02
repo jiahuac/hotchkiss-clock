@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:700|Bitter:400i,700');
 
+#weather
+{
+  text-align: right;
+  color: navy;
+  font-family: 'Lato', sans-serif;
+}
+
 #clock
 {
   position: relative;
