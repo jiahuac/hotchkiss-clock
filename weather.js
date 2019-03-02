@@ -17,6 +17,6 @@ $.ajax({
     success: function(weather) {
         let message = `It's <b>${weather.main.temp}</b> degrees in Lakeville, with <b>${weather.weather[0].description}</b>.`;
         document.getElementById("weather").innerHTML = message;
-        console.log(message);
+        // console.log(message);
     }
 });
