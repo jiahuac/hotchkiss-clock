@@ -2,11 +2,11 @@
 Controller for message on clock/time webapp
 Jiahua Chen
 Inspired by codepen/kkoutoup
-Last updated 24 Feb 2019
+Last updated 16 Apr 2019
 */
 
 // Loads a series of messages and quotes
-var message = ["Bell isn't working. Refer to schedules. <br> (Also go donate blood!)"]; // <- Message goes here!
+var message = ["Bell (still) isn't working. Refer to schedules. "]; // <- Message goes here!
 var quotes = [
 		{
 			quote: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
