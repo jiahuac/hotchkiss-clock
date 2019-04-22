@@ -12,7 +12,7 @@ $.ajax({
     url: url,
     type: 'GET',
     success: function(weather) {
-        let message = `It's <b>${parseInt(weather.main.temp)}</b> degrees in Lakeville, with <b>${weather.weather[0].description}</b>.`;
+        let message = `It's <b>${parseInt(weather.main.temp)}</b> degrees (${Math.round(((parseInt(weather.main.temp) - 32)/1.8) * 10) / 10} °C) in Lakeville, with <b>${weather.weather[0].description}</b>.`;
         document.getElementById("weather").innerHTML = message;
         // console.log(message);
     }

@@ -6,7 +6,7 @@ Last updated 24 Feb 2019
 
 // Gets the current date and time
 var d = new Date();
-// var d = new Date(2019,2,5,15,19,03,0);
+// var d = new Date(2019,2,5,15,13,03,0);
 // console.log(" *** d.getDate() " + d.getDate());
 // console.log(" *** d.getMonth() " + d.getMonth());
 // console.log(" *** dayType noClassSats" + i);
@@ -284,6 +284,19 @@ function toSecs(raw) {
   return (raw % 60);
 }
 
+var showSeconds = false;
+function toggleSecond()
+{
+  if (!showSeconds) {
+    showSeconds = true;
+    document.getElementById("secondtoggle").innerHTML = "Hide Seconds";
+  }
+  else {
+    showSeconds = false;
+    document.getElementById("secondtoggle").innerHTML = "Show Seconds";
+  }
+}
+
 function rawToString(raw) {
   var output = "";
 
@@ -293,18 +306,36 @@ function rawToString(raw) {
     output += toHrs(raw) + " hours ";
   }
 
-  if (toMins(raw) == 0) {
-    if (toSecs(raw) == 1) {
-      output += toSecs(raw) + " second";
+  if (showSeconds) {
+    if (toMins(raw) == 0) {
+      if (toSecs(raw) == 1) {
+        output += toSecs(raw) + " second";
+      } else {
+        output += toSecs(raw) + " seconds";
+      }
+    } else if (toMins(raw) == 1) {
+      output += toMins(raw) + " minute ";
+      if (toSecs(raw) == 1) {
+        output += toSecs(raw) + " second";
+      } else {
+        output += toSecs(raw) + " seconds";
+      }
     } else {
-      output += toSecs(raw) + " second";
+      output += toMins(raw) + " minutes ";
+      if (toSecs(raw) == 1) {
+        output += toSecs(raw) + " second";
+      } else {
+        output += toSecs(raw) + " seconds";
+      }
     }
-  } else if (toMins(raw) == 1) {
-    output += toMins(raw) + " minute ";
   } else {
-    output += toMins(raw) + " minutes ";
+    var ceilMins = toMins(raw) + 1;
+    if (toMins(raw) == 0) {
+      output += ceilMins + " minute";
+    } else {
+      output += ceilMins + " minutes";
+    }
   }
-
   return output;
 }
 
