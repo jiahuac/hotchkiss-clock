@@ -6,10 +6,9 @@
 	<link rel="stylesheet" href="style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script language='javascript' type="text/javascript" src='main.js'></script>
-	<script language='javascript' type="text/javascript" src='message.js'></script>
-	<script language='javascript' type="text/javascript" src='weather.js'></script>
-	<!-- <script language='javascript' type="text/javascript" src='clock.js'></script> -->
+	<script language='javascript' type="text/javascript" src='js/main.js'></script>
+	<script language='javascript' type="text/javascript" src='js/message.js'></script>
+	<script language='javascript' type="text/javascript" src='js/weather.js'></script>
 </head>
 
 <body onload="loadTime(),loadDate(),update(),loadMessage()">
@@ -25,9 +24,9 @@
 				<p id="speaker"></p>
 			</div>
 
-	<!-- <div id="debug"></div> -->
 	<div id="contact" class="tooltip" align="right">Eric Li '13 <br> Jiahua Chen '20
 		<span class="tooltiptext">This is still a work in progress. <br> You may contact me at <a style="color: aliceblue;" href="mailto:jchen20@hotchkiss.org?subject=Hotchkiss Clock">jchen20@hotchkiss.org</a>.</span>
 	</div>
+	<button id="secondtoggle" onclick="toggleSecond()">Show Seconds</button>
 </body>
 </html>
