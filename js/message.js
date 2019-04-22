@@ -114,7 +114,8 @@ function loadMessage()
 	}
 	else
 	{
-		var idx = Math.floor(Math.random()*quotes.length);
+		// var idx = Math.floor(Math.random()*quotes.length);
+		var idx = 5; // <- Clock quote
 		document.getElementById("quote").innerHTML = quotes[idx].quote;
 		document.getElementById("speaker").innerHTML = quotes[idx].name;
 	}
