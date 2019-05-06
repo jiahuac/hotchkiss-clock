@@ -6,7 +6,7 @@ Last updated 16 Apr 2019
 */
 
 // Loads a series of messages and quotes
-var message = []; // <- Message goes here!
+var message = ["Good luck to all those taking APs! Don't miss your exam!"]; // <- Message goes here!
 var quotes = [
 		{
 			quote: "Start by doing what's necessary; then do what's possible; and suddenly you are doing the impossible.",
