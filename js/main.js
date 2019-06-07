@@ -18,7 +18,7 @@ function updateD() {
 // Gets the classification of the date, and returns 0 if it is a normal day. Also contains dictionaries for special days.
 function dayType() {
   // Defines the special days
-  var onbreak = null;
+  var onbreak = true;
   var specialDays = [new calDay(3, 8), new calDay(4, 25)]; // <- For special event days
   var noClassSats = [new calDay(4, 20), new calDay(5, 4), new calDay(5, 18)]; // <- For days without Saturday classes
   var noClasses = [new calDay(4, 22), new calDay(5, 18), new calDay(5, 27), new calDay(6, 1)]; // <- For days without classes, or breaks
